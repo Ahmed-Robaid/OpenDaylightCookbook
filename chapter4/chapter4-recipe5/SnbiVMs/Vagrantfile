@@ -99,7 +99,7 @@ config.vm.define "snbi02", autostart: true do |snbi02|
   end
 
   ## Guest config
-  snbi02.vm.hostname = "snbi1-vm"
+  snbi02.vm.hostname = "snbi2-vm"
   snbi02.vm.network :public_network, bridge: "en0: Ethernet"
 
   ## Provisioning
