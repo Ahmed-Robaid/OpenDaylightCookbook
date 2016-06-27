@@ -1,0 +1,160 @@
+URI:http://<ODL_IP>:8181/restconf/config/bgp-rib:application-rib/example-app-rib/tables/bgp-types:ipv4-address-family/bgp-flowspec:flowspec-subsequent-address-family/bgp-flowspec:flowspec-routes
+Method: PUT
+Sample JSON body:
+
+{
+  "bgp-flowspec:flowspec-routes": {
+    "flowspec-route": [
+      {
+        "route-key": "flow0",
+        "attributes": {
+          "extended-communities": [
+            {
+              "transitive": true,
+              "traffic-rate-extended-community": {
+                "local-administrator": "Abdc_",
+                "informative-as": 999
+              }
+            },
+            {
+              "transitive": true,
+              "traffic-action-extended-community": {
+                "sample": true,
+                "terminal-action": false
+              }
+            },
+            {
+              "transitive": true,
+              "redirect-extended-community": {
+                "global-administrator": 999,
+                "local-administrator": "xyz="
+              }
+            },
+            {
+              "transitive": true,
+              "redirect-ipv4": {
+                "global-administrator": "192.168.0.1",
+                "local-administrator": 12345
+              }
+            },
+            {
+              "transitive": true,
+              "redirect-ip-nh-extended-community": {
+                "copy": false
+              }
+            },
+            {
+              "transitive": true,
+              "traffic-marking-extended-community": {
+                "global-administrator": 20
+              }
+            }
+          ],
+          "origin": {
+            "value": "igp"
+          },
+          "as-path": {},
+          "local-pref": {
+            "pref": 100
+          }
+        },
+        "flowspec": [
+          {
+            "destination-prefix": "10.0.0.1/32"
+          },
+          {
+            "source-prefix": "172.0.0.1/32"
+          },
+          {
+            "protocol-ips": [
+              {
+                "op": "equals end-of-list",
+                "value": 6
+              }
+            ]
+          },
+          {
+            "ports": [
+              {
+                "op": "equals end-of-list",
+                "value": 40
+              }
+            ]
+          },
+          {
+            "destination-ports": [
+              {
+                "op": "greater-than",
+                "value": 8100
+              },
+              {
+                "op": "and-bit less-than end-of-list",
+                "value": 8110
+              }
+            ]
+          },
+          {
+            "source-ports": [
+              {
+                "op": "greater-than end-of-list",
+                "value": 2048
+              }
+            ]
+          },
+          {
+            "types": [
+              {
+                "op": "equals end-of-list",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "codes": [
+              {
+                "op": "equals end-of-list",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "tcp-flags": [
+              {
+                "op": "match end-of-list",
+                "value": 16
+              }
+            ]
+          },
+          {
+            "packet-lengths": [
+              {
+                "op": "greater-than",
+                "value": 100
+              },
+              {
+                "op": "and-bit less-than end-of-list",
+                "value": 200
+              }
+            ]
+          },
+          {
+            "dscps": [
+              {
+                "op": "equals end-of-list",
+                "value": 10
+              }
+            ]
+          },
+          {
+            "fragments": [
+              {
+                "op": "match end-of-list",
+                "value": "first"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+URI:http://<ODL_IP>:8181/restconf/config/bgp-rib:application-rib/example-app-rib/tables/bgp-types:ipv4-address-family/bgp-labeled-unicast:labeled-unicast-subsequent-address-family
+Method: PUT
+Sample JSON request body:
+
+{
+  "tables": [
+    {
+      "afi": "bgp-types:ipv4-address-family",
+      "safi": "bgp-labeled-unicast:labeled-unicast-subsequent-address-family",
+      "attributes": {
+        "uptodate": true
+      },
+      "bgp-labeled-unicast:labeled-unicast-routes": {
+        "labeled-unicast-route": [
+          {
+            "route-key": "label1",
+            "label-stack": [
+              {
+                "label-value": 300
+              },
+              {
+                "label-value": 420
+              }
+            ],
+            "prefix": "2.1.1.1/32",
+            "attributes": {
+              "ipv4-next-hop": {
+                "global": "192.168.100.20"
+              },
+              "origin": {
+                "value": "igp"
+              },
+              "atomic-aggregate": {},
+              "local-pref": {
+                "pref": 100
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

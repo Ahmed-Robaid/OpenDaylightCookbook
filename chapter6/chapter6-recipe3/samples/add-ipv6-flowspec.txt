@@ -1,0 +1,46 @@
+URI:http://<ODL_IP>:8181/restconf/config/bgp-rib:application-rib/example-app-rib/tables/bgp-types:ipv6-address-family/bgp-flowspec:flowspec-subsequent-address-family/bgp-flowspec:flowspec-ipv6-routes
+Method: PUT
+Sample JSON request body:
+
+{
+  "bgp-flowspec:flowspec-ipv6-routes": {
+    "flowspec-route": [
+      {
+        "route-key": "bgpfs-v6",
+        "attributes": {
+          "extended-communities": [
+            {
+              "redirect-ipv6": {
+                "global-administrator": "2001:db8:1::26",
+                "local-administrator": 9999
+              }
+            }
+          ],
+          "origin": {
+            "value": "igp"
+          },
+          "as-path": {},
+          "local-pref": {
+            "pref": 100
+          }
+        },
+        "flowspec": [
+          {
+            "destination-prefix": "2001:db8:30::25/128"
+          },
+          {
+            "source-prefix": "2001:db8:31::25/128"
+          },
+          {
+            "flow-label": [
+              {
+                "op": "equals end-of-list",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
