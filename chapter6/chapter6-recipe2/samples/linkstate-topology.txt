@@ -1,0 +1,13 @@
+URL: http://<ODL_IP>:8181/restconf/operational/network-topology:network-topology/topology/example-linkstate-topology
+Method: GET
+Sample JSON response:
+
+{
+  "topology": [
+    {
+      "topology-id": "example-linkstate-topology",
+      "topology-types": {},
+      "server-provided": true
+    }
+  ]
+}
