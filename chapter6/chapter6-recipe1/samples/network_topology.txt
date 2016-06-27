@@ -1,0 +1,65 @@
+URL: http://<ODL_IP>:8181/restconf/operational/network-topology:network-topology/
+Method: GET
+Sample JSON response:
+
+{
+  "network-topology": {
+    "topology": [
+      {
+        "topology-id": "pcep-topology",
+        "topology-types": {
+          "network-topology-pcep:topology-pcep": {}
+        }
+      },
+      {
+        "topology-id": "example-linkstate-topology",
+        "topology-types": {},
+        "server-provided": true
+      },
+      {
+        "topology-id": "example-ipv6-topology",
+        "topology-types": {},
+        "node": [
+          {
+            "node-id": "2001:db8:1::3",
+            "l3-unicast-igp-topology:igp-node-attributes": {
+              "prefix": [
+                {
+                  "prefix": "2001:db8:60::5/128"
+                }
+              ]
+            }
+          }
+        ],
+        "server-provided": true
+      },
+      {
+        "topology-id": "example-ipv4-topology",
+        "topology-types": {},
+        "node": [
+          {
+            "node-id": "192.168.1.119",
+            "l3-unicast-igp-topology:igp-node-attributes": {
+              "prefix": [
+                {
+                  "prefix": "192.0.2.0/24"
+                }
+              ]
+            }
+          },
+          {
+            "node-id": "192.168.1.102",
+            "l3-unicast-igp-topology:igp-node-attributes": {
+              "prefix": [
+                {
+                  "prefix": "2.1.1.1/32"
+                }
+              ]
+            }
+          }
+        ],
+        "server-provided": true
+      }
+    ]
+  }
+}

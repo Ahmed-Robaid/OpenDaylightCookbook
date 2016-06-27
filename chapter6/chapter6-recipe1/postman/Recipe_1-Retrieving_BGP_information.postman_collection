@@ -1,0 +1,56 @@
+{
+	"id": "63467c99-f029-124b-c2f8-dc5e19d34059",
+	"name": "Recipe 1: Configuring and retrieving BGP information",
+	"description": "GET requests to retrieve BGP and RIB information after Opendaylight BGP is configured.",
+	"order": [
+		"103bd17b-3a0f-e163-59b6-7efcb9dec355",
+		"e4c46065-6466-02bc-f274-62756cbe81b4"
+	],
+	"folders": [],
+	"timestamp": 1466805306391,
+	"owner": "255113",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "103bd17b-3a0f-e163-59b6-7efcb9dec355",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW46YWRtaW4=\n",
+			"url": "http://localhost:8181/restconf/operational/network-topology:network-topology/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1466805773734,
+			"name": "Get BGP Network topology information",
+			"description": "Get the details of the BGP peer node info and the different topology information configured in Opendaylight BGP implementation.",
+			"collectionId": "63467c99-f029-124b-c2f8-dc5e19d34059",
+			"responses": [],
+			"rawModeData": "{\n\"network-topology:node\":[\n  {\n      \"node-id\": \"ovsdb://192.168.1.184:6640\",\n      \"connection-info\": {\n        \"ovsdb:remote-port\": 6640,\n        \"ovsdb:remote-ip\": \"192.168.1.164\"\n      }\n  }\n]\n}"
+		},
+		{
+			"id": "e4c46065-6466-02bc-f274-62756cbe81b4",
+			"headers": "",
+			"url": "http://localhost:8181/restconf/operational/bgp-rib:bgp-rib/rib/example-bgp-rib/",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "63467c99-f029-124b-c2f8-dc5e19d34059",
+			"data": null,
+			"dataMode": "params",
+			"name": "GET BGP RIB information",
+			"description": "Retrieve BGP Routing Information Base (RIB) data",
+			"descriptionFormat": "html",
+			"time": 1465776770018,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
