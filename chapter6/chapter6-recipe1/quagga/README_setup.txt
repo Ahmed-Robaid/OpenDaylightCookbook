@@ -1,4 +1,5 @@
 Quagga is an open source project for Network routing software that includes BGP implementation among many other routing protocols. The recipes in Chapter 6 use Quagga software suite to run BGP peer router and to establish a BGP connection between the Opendaylight and Quagga router. In order to achieve this Quagga needs to be configured for BGP as follows.
+For more details refer to Quagga documentation at http://www.nongnu.org/quagga/docs/docs-info.html
 
 Prerequisite
 -------------
