@@ -1,0 +1,4 @@
+Topology to test shortest path & suurballe:
+
+$ wget -O shortest_path.py https://github.com/jgoodyear/OpenDaylightCookbook/blob/master/chapter3/chapter3-recipe3/%20shortest_path.py
+$ sudo mn --controller=remote,ip=192.168.2.11 --custom ~/shortest_path.py --topo shortest_path --switch ovsk,protocols=OpenFlow13
