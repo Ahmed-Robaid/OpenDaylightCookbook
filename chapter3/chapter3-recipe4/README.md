@@ -8,6 +8,6 @@
 
 ### Start Echo server on port 2007
 ####TCP
-java -jar EchoServer.jar -t true -p 2007
+`java -jar EchoServer.jar -t true -p 2007`
 ####UDP
-java -jar EchoServer.jar -t false -p 2007
+`java -jar EchoServer.jar -t false -p 2007`
