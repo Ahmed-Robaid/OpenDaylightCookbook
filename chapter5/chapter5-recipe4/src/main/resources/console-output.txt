@@ -1,0 +1,234 @@
+[odl@odl31 devstack]$ source openrc admin admin
+[odl@odl31 devstack]$ ./../tools/os_addnano.sh 
++--------------------------------------+---------+-----------+------+-----------+------+-------+-------------+-----------+
+| ID                                   | Name    | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor | Is_Public |
++--------------------------------------+---------+-----------+------+-----------+------+-------+-------------+-----------+
+| 5efade5d-bb28-4b46-8401-e66bd9b6f1ba | m1.nano | 64        | 0    | 0         |      | 1     | 1.0         | True      |
++--------------------------------------+---------+-----------+------+-----------+------+-------+-------------+-----------+
+[odl@odl31 devstack]$ ./../tools/os_addadminkey.sh
++-----------+------+-------------------------------------------------+
+| Name      | Type | Fingerprint                                     |
++-----------+------+-------------------------------------------------+
+| admin_key | ssh  | a7:85:d8:ac:4d:81:94:a2:18:48:37:5a:47:b9:04:e6 |
++-----------+------+-------------------------------------------------+
+[odl@odl31 devstack]$ ./../tools/os_addextnetrtr.sh
+Created a new network:
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | 8ff12901-8c56-42bb-8c97-9ed469086198 |
+| mtu                       | 0                                    |
+| name                      | ext-net                              |
+| port_security_enabled     | True                                 |
+| provider:network_type     | flat                                 |
+| provider:physical_network | public                               |
+| provider:segmentation_id  |                                      |
+| router:external           | True                                 |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tenant_id                 | a12af53696e140bda83abb788d74d8aa     |
++---------------------------+--------------------------------------+
+Created a new subnet:
++-------------------+---------------------------------------------------+
+| Field             | Value                                             |
++-------------------+---------------------------------------------------+
+| allocation_pools  | {"start": "192.168.56.9", "end": "192.168.56.14"} |
+| cidr              | 192.168.56.0/24                                   |
+| dns_nameservers   |                                                   |
+| enable_dhcp       | False                                             |
+| gateway_ip        | 192.168.56.1                                      |
+| host_routes       |                                                   |
+| id                | c4e5f5dc-2f5e-4b10-aceb-d8e7537c02f2              |
+| ip_version        | 4                                                 |
+| ipv6_address_mode |                                                   |
+| ipv6_ra_mode      |                                                   |
+| name              | ext-subnet                                        |
+| network_id        | 8ff12901-8c56-42bb-8c97-9ed469086198              |
+| subnetpool_id     |                                                   |
+| tenant_id         | a12af53696e140bda83abb788d74d8aa                  |
++-------------------+---------------------------------------------------+
+Created a new router:
++-----------------------+--------------------------------------+
+| Field                 | Value                                |
++-----------------------+--------------------------------------+
+| admin_state_up        | True                                 |
+| distributed           | False                                |
+| external_gateway_info |                                      |
+| id                    | 90b6a92b-297e-4710-890d-59e941fce7b6 |
+| name                  | ext-rtr                              |
+| routes                |                                      |
+| status                | ACTIVE                               |
+| tenant_id             | a12af53696e140bda83abb788d74d8aa     |
++-----------------------+--------------------------------------+
+Set gateway for router ext-rtr
+Created a new network:
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| id                        | 6f997826-6906-4aca-aa44-616c23845be5 |
+| mtu                       | 0                                    |
+| name                      | vx-net                               |
+| port_security_enabled     | True                                 |
+| provider:network_type     | vxlan                                |
+| provider:physical_network |                                      |
+| provider:segmentation_id  | 1500                                 |
+| router:external           | False                                |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tenant_id                 | a12af53696e140bda83abb788d74d8aa     |
++---------------------------+--------------------------------------+
+Created a new subnet:
++-------------------+------------------------------------------------+
+| Field             | Value                                          |
++-------------------+------------------------------------------------+
+| allocation_pools  | {"start": "10.100.5.2", "end": "10.100.5.254"} |
+| cidr              | 10.100.5.0/24                                  |
+| dns_nameservers   | 8.8.8.8                                        |
+| enable_dhcp       | True                                           |
+| gateway_ip        | 10.100.5.1                                     |
+| host_routes       |                                                |
+| id                | 27b8f3cc-c356-4c8c-b722-bf191e615cec           |
+| ip_version        | 4                                              |
+| ipv6_address_mode |                                                |
+| ipv6_ra_mode      |                                                |
+| name              | vx-subnet                                      |
+| network_id        | 6f997826-6906-4aca-aa44-616c23845be5           |
+| subnetpool_id     |                                                |
+| tenant_id         | a12af53696e140bda83abb788d74d8aa               |
++-------------------+------------------------------------------------+
+Added interface ad0fd1b9-8d3b-4bf7-a6f5-61488d9030fc to router ext-rtr.
+[odl@odl31 devstack]$ 
+[odl@odl31 devstack]$ ./../tools/os_addvms.sh
++--------------------------------------+----------------------------------------------------------------+
+| Property                             | Value                                                          |
++--------------------------------------+----------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                         |
+| OS-EXT-AZ:availability_zone          | nova                                                           |
+| OS-EXT-SRV-ATTR:host                 | -                                                              |
+| OS-EXT-SRV-ATTR:hostname             | vmvx1                                                          |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                                              |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000001                                              |
+| OS-EXT-SRV-ATTR:kernel_id            | a63d23ed-3617-4cb9-a001-e0ff3515d0cc                           |
+| OS-EXT-SRV-ATTR:launch_index         | 0                                                              |
+| OS-EXT-SRV-ATTR:ramdisk_id           | f8bb021b-aae3-47a3-a8aa-08e56beb409f                           |
+| OS-EXT-SRV-ATTR:reservation_id       | r-n05yfnpb                                                     |
+| OS-EXT-SRV-ATTR:root_device_name     | -                                                              |
+| OS-EXT-SRV-ATTR:user_data            | -                                                              |
+| OS-EXT-STS:power_state               | 0                                                              |
+| OS-EXT-STS:task_state                | scheduling                                                     |
+| OS-EXT-STS:vm_state                  | building                                                       |
+| OS-SRV-USG:launched_at               | -                                                              |
+| OS-SRV-USG:terminated_at             | -                                                              |
+| accessIPv4                           |                                                                |
+| accessIPv6                           |                                                                |
+| adminPass                            | 4Wiej9J6hpx5                                                   |
+| config_drive                         |                                                                |
+| created                              | 2016-07-29T18:49:46Z                                           |
+| flavor                               | m1.nano (5efade5d-bb28-4b46-8401-e66bd9b6f1ba)                 |
+| hostId                               |                                                                |
+| id                                   | 73b77209-bb87-4474-8f16-0f4cd10aa4d4                           |
+| image                                | cirros-0.3.4-x86_64-uec (28d343b8-a13a-46d0-a907-1474a920f9e0) |
+| key_name                             | admin_key                                                      |
+| metadata                             | {}                                                             |
+| name                                 | vmvx1                                                          |
+| os-extended-volumes:volumes_attached | []                                                             |
+| progress                             | 0                                                              |
+| security_groups                      | default                                                        |
+| status                               | BUILD                                                          |
+| tenant_id                            | a12af53696e140bda83abb788d74d8aa                               |
+| updated                              | 2016-07-29T18:49:46Z                                           |
+| user_id                              | d29382655dca4c64a075205a13c05487                               |
++--------------------------------------+----------------------------------------------------------------+
+
+Server building... 100% complete
+Finished
++--------------------------------------+----------------------------------------------------------------+
+| Property                             | Value                                                          |
++--------------------------------------+----------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                         |
+| OS-EXT-AZ:availability_zone          | nova                                                           |
+| OS-EXT-SRV-ATTR:host                 | -                                                              |
+| OS-EXT-SRV-ATTR:hostname             | vmvx2                                                          |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                                              |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000002                                              |
+| OS-EXT-SRV-ATTR:kernel_id            | a63d23ed-3617-4cb9-a001-e0ff3515d0cc                           |
+| OS-EXT-SRV-ATTR:launch_index         | 0                                                              |
+| OS-EXT-SRV-ATTR:ramdisk_id           | f8bb021b-aae3-47a3-a8aa-08e56beb409f                           |
+| OS-EXT-SRV-ATTR:reservation_id       | r-98349r36                                                     |
+| OS-EXT-SRV-ATTR:root_device_name     | -                                                              |
+| OS-EXT-SRV-ATTR:user_data            | -                                                              |
+| OS-EXT-STS:power_state               | 0                                                              |
+| OS-EXT-STS:task_state                | scheduling                                                     |
+| OS-EXT-STS:vm_state                  | building                                                       |
+| OS-SRV-USG:launched_at               | -                                                              |
+| OS-SRV-USG:terminated_at             | -                                                              |
+| accessIPv4                           |                                                                |
+| accessIPv6                           |                                                                |
+| adminPass                            | H3pD2pN3tFV7                                                   |
+| config_drive                         |                                                                |
+| created                              | 2016-07-29T18:49:59Z                                           |
+| flavor                               | m1.nano (5efade5d-bb28-4b46-8401-e66bd9b6f1ba)                 |
+| hostId                               |                                                                |
+| id                                   | 77dddcf8-ad2b-4f7b-be91-918f6f656cc0                           |
+| image                                | cirros-0.3.4-x86_64-uec (28d343b8-a13a-46d0-a907-1474a920f9e0) |
+| key_name                             | admin_key                                                      |
+| metadata                             | {}                                                             |
+| name                                 | vmvx2                                                          |
+| os-extended-volumes:volumes_attached | []                                                             |
+| progress                             | 0                                                              |
+| security_groups                      | default                                                        |
+| status                               | BUILD                                                          |
+| tenant_id                            | a12af53696e140bda83abb788d74d8aa                               |
+| updated                              | 2016-07-29T18:49:59Z                                           |
+| user_id                              | d29382655dca4c64a075205a13c05487                               |
++--------------------------------------+----------------------------------------------------------------+
+Server building... 100% complete
+Finished
++-------+-------------------------------------------------------------------------------------+
+| Type  | Url                                                                                 |
++-------+-------------------------------------------------------------------------------------+
+| novnc | http://192.168.254.31:6080/vnc_auto.html?token=9da0d432-9f06-4986-9b0d-a66792e8ed08 |
++-------+-------------------------------------------------------------------------------------+
++-------+-------------------------------------------------------------------------------------+
+| Type  | Url                                                                                 |
++-------+-------------------------------------------------------------------------------------+
+| novnc | http://192.168.254.31:6080/vnc_auto.html?token=0b5cfefa-527b-4905-adad-952627cf46ff |
++-------+-------------------------------------------------------------------------------------+
+[odl@odl31 devstack]$ 
+[odl@odl31 devstack]$ ./../tools/os_addfloatingips.sh
+Created a new floatingip:
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| fixed_ip_address    | 10.100.5.3                           |
+| floating_ip_address | 192.168.56.10                        |
+| floating_network_id | 8ff12901-8c56-42bb-8c97-9ed469086198 |
+| id                  | 318fdc18-8c68-475a-b409-3b0c917bb1b0 |
+| port_id             | 4270a668-730e-49df-a4f8-be74688df9e5 |
+| router_id           | 90b6a92b-297e-4710-890d-59e941fce7b6 |
+| status              | ACTIVE                               |
+| tenant_id           | a12af53696e140bda83abb788d74d8aa     |
++---------------------+--------------------------------------+
+Created a new floatingip:
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| fixed_ip_address    | 10.100.5.4                           |
+| floating_ip_address | 192.168.56.11                        |
+| floating_network_id | 8ff12901-8c56-42bb-8c97-9ed469086198 |
+| id                  | a2bfcb51-90ae-4771-8871-79ad0d20dd8a |
+| port_id             | d328db68-2087-4599-8ce4-bae0d9cd72ca |
+| router_id           | 90b6a92b-297e-4710-890d-59e941fce7b6 |
+| status              | ACTIVE                               |
+| tenant_id           | a12af53696e140bda83abb788d74d8aa     |
++---------------------+--------------------------------------+
++--------------------------------------+------------------+---------------------+--------------------------------------+
+| id                                   | fixed_ip_address | floating_ip_address | port_id                              |
++--------------------------------------+------------------+---------------------+--------------------------------------+
+| 318fdc18-8c68-475a-b409-3b0c917bb1b0 | 10.100.5.3       | 192.168.56.10       | 4270a668-730e-49df-a4f8-be74688df9e5 |
+| a2bfcb51-90ae-4771-8871-79ad0d20dd8a | 10.100.5.4       | 192.168.56.11       | d328db68-2087-4599-8ce4-bae0d9cd72ca |
++--------------------------------------+------------------+---------------------+--------------------------------------+

@@ -1,0 +1,35 @@
+[odl@odl32 devstack]$ sudo ovs-vsctl show
+a1481fd6-bd18-437b-b015-7623c76e1bdf
+    Manager "tcp:192.168.1.164:6640"
+        is_connected: true
+    Bridge br-int
+        Controller "tcp:192.168.1.164:6653"
+            is_connected: true
+        fail_mode: secure
+        Port br-int
+            Interface br-int
+                type: internal
+        Port "vxlan-192.168.254.31"
+            Interface "vxlan-192.168.254.31"
+                type: vxlan
+                options: {key=flow, local_ip="192.168.254.32", remote_ip="192.168.254.31"}
+        Port patch-ext
+            Interface patch-ext
+                type: patch
+                options: {peer=patch-int}
+        Port "tapd328db68-20"
+            Interface "tapd328db68-20"
+    Bridge br-ex
+        Controller "tcp:192.168.1.164:6653"
+            is_connected: true
+        fail_mode: secure
+        Port patch-int
+            Interface patch-int
+                type: patch
+                options: {peer=patch-ext}
+        Port "eth2"
+            Interface "eth2"
+        Port br-ex
+            Interface br-ex
+                type: internal
+ovs_version: "2.4.0"

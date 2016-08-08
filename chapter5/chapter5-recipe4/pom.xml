@@ -14,6 +14,6 @@
 
     <artifactId>chapiter5-recipe4</artifactId>
     <packaging>pom</packaging>
-    <name>Chapter 5 :: Recipe 4 :: L3 Services with OpenStack</name>
+    <name>Chapter 5 :: Recipe 4 :: Edge-based Virtual Networks</name>
 
 </project>
