@@ -14,6 +14,6 @@
 
     <artifactId>chapiter5-recipe5</artifactId>
     <packaging>pom</packaging>
-    <name>Chapter 5 :: Recipe 5 :: Campus Multi-tenancy with OpenFlow</name>
+    <name>Chapter 5 :: Recipe 5 :: Service Function Chaining</name>
 
 </project>
