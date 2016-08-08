@@ -14,6 +14,6 @@
 
     <artifactId>chapiter5-recipe2</artifactId>
     <packaging>pom</packaging>
-    <name>Chapter 5 :: Recipe 2 :: Network Virtualization with OpenFlow</name>
+    <name>Chapter 5 :: Recipe 2 :: Integrating with OpenStack Neutron</name>
 
 </project>
