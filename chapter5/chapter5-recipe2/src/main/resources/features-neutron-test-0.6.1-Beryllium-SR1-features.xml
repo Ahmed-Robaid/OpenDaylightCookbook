@@ -1,0 +1,7 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="odl-neutron-test-0.6.1-Beryllium-SR1" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <repository>mvn:org.opendaylight.neutron/features-neutron/0.6.1-Beryllium-SR1/xml/features</repository>
+  <feature name="odl-neutron-dummyprovider-test" version="0.6.1-Beryllium-SR1" description="OpenDaylight :: Neutron :: Dummy Provider Test">
+    <feature version="0.6.1-Beryllium-SR1">odl-neutron-service</feature>
+    <bundle>mvn:org.opendaylight.neutron/dummyprovider/0.6.1-Beryllium-SR1</bundle>
+  </feature>
+</features>
