@@ -14,6 +14,6 @@
 
     <artifactId>chapiter5-recipe3</artifactId>
     <packaging>pom</packaging>
-    <name>Chapter 5 :: Recipe 3 :: Integrating with OpenStack Neutron</name>
+    <name>Chapter 5 :: Recipe 3 :: OpenStack integration with OpenDaylight</name>
 
 </project>
