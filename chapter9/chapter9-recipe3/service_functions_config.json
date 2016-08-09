@@ -30,8 +30,6 @@
           } 
         ] 
       }, 
-Quebra de Página
- 
  
       { 
         "name": "openflow:4", 
@@ -64,7 +62,9 @@ Quebra de Página
       } 
     ] 
   } 
-}{ 
+}
+
+{ 
   "service-function-forwarders": { 
     "service-function-forwarder": [ 
       { 
@@ -96,8 +96,6 @@ Quebra de Página
           } 
         ] 
       }, 
-Quebra de Página
- 
  
       { 
         "name": "openflow:4", 
