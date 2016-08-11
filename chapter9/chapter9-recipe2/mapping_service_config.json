@@ -1,0 +1,29 @@
+{
+	"mappings": {
+		"outer-map": [{
+			"id": "uva",
+			"inner-map": [{
+				"inner-key": "ip_prefix",
+				"value": "10.0.0.1/32"
+			}, {
+				"inner-key": "mpls_label",
+				"value": "15"
+			}, {
+				"inner-key": "switch_port",
+				"value": "openflow:1:1"
+			}]
+		}, {
+			"id": "eur",
+			"inner-map": [{
+				"inner-key": "ip_prefix",
+				"value": "10.0.0.2/32"
+			}, {
+				"inner-key": "mpls_label",
+				"value": "16"
+			}, {
+				"inner-key": "switch_port",
+				"value": "openflow:3:1"
+			}]
+		}]
+	}
+}
