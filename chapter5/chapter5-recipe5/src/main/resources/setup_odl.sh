@@ -8,7 +8,7 @@ sudo update-java-alternatives -s java-8-oracle
 sudo apt-get install oracle-java8-set-default -y
 sudo apt-get install  mininet -y
 sudo mkdir -p /usr/local/apache-maven
-sudo wget http://ftp.wayne.edu/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+sudo wget https://archive.apache.org/dist/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 sudo mv apache-maven-3.3.3-bin.tar.gz /usr/local/apache-maven
 sudo tar -xzvf /usr/local/apache-maven/apache-maven-3.3.3-bin.tar.gz -C /usr/local/apache-maven/
 sudo update-alternatives --install /usr/bin/mvn mvn /usr/local/apache-maven/apache-maven-3.3.3/bin/mvn 1
